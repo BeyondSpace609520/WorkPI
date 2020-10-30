@@ -1,0 +1,567 @@
+// $accent: rgba(255, 205, 56, 1);
+// $accent2: rgba(252, 169, 61, 1);
+// $accent2: rgb(255, 174, 0);
+
+$accent: rgba(253, 221, 77, 1);
+$accent2: rgba(248, 195, 50, 1);
+$accentGrad: linear-gradient(to right, $accent2, $accent);
+
+a {
+  color: $accent2;
+}
+
+body {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  flex-direction: row;
+  background: linear-gradient(to bottom, rgb(250, 250, 250), rgb(235, 235, 235));
+  overflow: hidden;
+
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  width: 64px;
+  height: 100%;
+  border-right: 2px solid $accent;
+  // flex-grow: 1;
+  flex-shrink: 0;
+  z-index: 100;
+
+  .logo {
+    background-image: url(logo.svg);
+    height: 48px;
+    width: 48px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 24px 8px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+  }
+
+  .system {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 24px + 64px;
+  }
+
+  .button {
+    display: flex;
+    height: 64px;
+    width: 64px;
+    font-size: 28px;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #eee;
+    // border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: all 300ms;
+
+    &:last-child {
+      border-bottom: 1px solid #eee;
+    }
+
+    &:hover {
+      background: #eee;
+      // color: $accent;
+      i {
+        
+        // box-shadow: 0 0 12px adjust-color($accent, $alpha: -0.5);
+        // text-shadow: 0 0 12px adjust-color($accent, $alpha: -0.5);
+      }
+    }
+
+    &.active {
+      color: white;
+      background: $accent;
+      border-color: $accent;
+
+      &:hover {
+        box-shadow: 0 0 12px adjust-color($accent, $alpha: -0.5);
+      }
+    }
+  }
+}
+
+.drawer {
+  position: relative;
+  width: 0;
+  background: #eee;
+  
+  transition: all 300ms;
+  // transform: translateX(-1px);
+  
+
+  &.active {
+    width: 400px;
+    border-right: 1px solid #bbb;
+  }
+  
+  &::before {
+    position: absolute;
+    display: block;
+    top: -20px;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    content: '';
+    box-shadow: 0 0 20px rgba(0,0,0,0.1) inset;
+  }
+
+  .drawer-button {
+    position: absolute;
+    bottom: 40px;
+    right: -8px;
+    width: 16px;
+    height: 32px;
+    background-color: white;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    color: #bbb;
+    line-height: 32px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: grab;
+    user-select: none;
+    z-index: 1000;
+  }
+
+  &> .content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 400px;
+
+    .widget {
+      margin: 40px;
+    }
+  }
+}
+
+main {
+  display: flex;
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.tab-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  max-height: 100vh;
+  flex-grow: 1;
+
+  &> .tabs {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    height: 32px;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: -16px;
+    z-index: 100;
+    border: 1px solid #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    
+    // flex-shrink: 1;
+    // width: 100%;
+
+    &> div {
+      height: 48px;
+      width: 100px;
+      align-self: center;
+      line-height: 48px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 300ms;
+      // border-bottom: 2px solid white;
+      border-right: 1px solid #eee;
+      font-size: 0.8em;
+      box-sizing: border-box;
+
+      &:last-child {
+        border-right: none;
+      }
+
+      &.active {
+        // border-color: $accent;
+        background: $accent;
+        color: white;
+        font-weight: bold;
+
+        &:hover {
+          background: white;
+          color: $accent;
+        }
+      }
+
+      &:hover {
+        // color: #bbb;
+        // border-color: #bbb;
+        // padding-top: 24px;
+        color: $accent;
+        // box-shadow: 0 0 12px adjust-color($accent, $alpha: 0.2);
+      }
+    }
+  }
+
+  &> .content {
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    z-index: 90;
+  }
+}
+
+#content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  overflow: auto;
+  gap: 40px;
+  padding-bottom: 20px;;
+  
+}
+
+#wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-weight: normal;
+  font-size: 1.4em;
+  margin: 1.6em 0;
+}
+
+.widget {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  //margin: 40px;
+  // padding: 20px;
+  // background: linear-gradient(to bottom, $accent, white 5%);
+  background: white;
+  min-width: 300px;
+  // height: 200px;
+
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+
+  border-radius: 16px;
+  overflow: hidden;
+
+  &.secondary {
+    background: rgba(255,255,255,0.5);
+    .title {
+      background: rgba(255,255,255,0);
+      span {
+        // border-bottom: 2px solid $accent;
+        color: $accent2;
+      }
+    }
+  }
+
+  &.focus {
+    background: $accentGrad;
+  }
+
+  &.curved {
+    background: $accentGrad;
+
+    .content-bg {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      border-radius: 16px;
+      flex-grow: 1;
+    }
+
+    // .bottom {
+    //   border-radius: 16px;
+    // }
+  }
+
+  &.wide {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .title {
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    height: 48px;
+    width: 100%;
+    background: $accentGrad;
+    // color: white;
+    padding: 16px 10px;
+    box-sizing: border-box;
+    font-weight: lighter;
+    span {
+      padding: 0 6px;
+    }
+  }
+
+  .content {
+    //position: absolute;
+    width: 100%;
+    flex-grow: 1;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+
+  .bottom {
+    width: 100%;
+    // background: linear-gradient(to right, #333, #444);
+    background: black;
+    //border-top:1px solid #bbb;
+    padding: 10px 16px;
+    box-sizing: border-box;
+    font-size: 0.8em;
+    text-align: right;
+  }
+}
+
+
+
+
+
+button {
+  background-color: rgba(255,255,255, 0);
+  border: 1px solid $accent;
+  border-radius: 24px;
+  padding: 8px 30px;
+  color: $accent;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 300ms;
+
+  &:hover {
+    box-shadow: 0 0 12px adjust-color($accent, $alpha: -0.5);
+  }
+
+  &.primary {
+    border-color: $accent;
+    color: white;
+    background-color: $accent;
+  }
+
+  &.squared {
+    border-radius: 8px;
+  }
+}
+
+
+
+.scroll-container {
+  flex-grow: 1;
+  width: 100%;
+  position: relative;
+  &> .scroller {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 8px;
+  }
+
+  &> .content {
+    position: absolute;
+    top: 0;
+    right: 8px;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    padding: 40px;
+  }
+}
+
+.side-widgets {
+  display: none;
+}
+
+
+.focus {
+  button {
+    border-color: white;
+    color: white;
+    background-color: rgba(255,255,255, 0);
+
+    &:hover {
+      box-shadow: 0 0 12px rgba(255,255,255,0.5);
+    }
+
+    &.primary {
+      border-color: white;
+      color: $accent2;
+      background-color: white;
+    }
+  }
+
+  .progress-bar {
+    border: 1px solid white;
+  
+    &> div {
+      background: white;
+    }
+  }
+}
+
+
+.progress-bar {
+  height: 8px;
+  width: 100%;
+  border: 1px solid $accent;
+  border-radius: 8px;
+
+  &> div {
+    height: 100%;
+    width: 33%;
+    background: $accentGrad;
+  }
+}
+
+
+body.dark-theme {
+  background: linear-gradient(to bottom, rgb(50, 50, 50), rgb(35, 35, 35));
+  color: white;
+
+  nav {
+    background: $accentGrad;
+    border-color: white;
+
+    .logo {
+      background-image: url(logo-white.svg);
+    }
+
+    .button {
+      border-color: $accent2;
+
+      &.active {
+        background: white;
+        color: black;
+
+        &:hover {
+          background: white;
+        }
+      }
+
+      &:hover {
+        background: rgba(255,255,255,0.5);
+      }
+    }
+  }
+
+  .widget {
+    background: #333;
+
+    .title {
+      color: black;
+    }
+
+    &.curved {
+      background: $accentGrad;
+      .content-bg {
+        background: #333;
+      }
+    }
+
+    &.focus {
+      background: $accentGrad;
+    }
+
+    
+  }
+
+  button {
+    &.primary {
+      color: black;
+    }
+  }
+
+
+
+  .tab-container {
+
+  
+    &> .tabs {
+     
+      background: #333;
+      
+      border-color: #666;
+     
+  
+      &> div {
+       
+        border-color: #666;
+       
+        &.active {
+          // border-color: $accent;
+          background: $accent;
+          color: white;
+          
+          &:hover {
+            background: #666;
+            color: $accent;
+          }
+        }
+  
+        &:hover {
+          // color: #bbb;
+          // border-color: #bbb;
+          // padding-top: 24px;
+          background: #666;
+          color: $accent;
+          // box-shadow: 0 0 12px adjust-color($accent, $alpha: 0.2);
+        }
+      }
+    }
+  
+    &> .content {
+      border-color: #666;
+    }
+  }
+
+
+  .drawer {
+    background: #444;
+    
+  
+    &.active {
+      border-right: 1px solid #000;
+    }
+    
+    &::before {
+      box-shadow: 0 0 20px rgba(0,0,0,0.3) inset;
+    }
+  
+    .drawer-button {
+      background-color: white;
+      border-color: white;
+      color: #000;
+    }
+  
+   
+  }
+}

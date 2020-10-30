@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   height="590.62366"
+   width="572.47546"
+   sodipodi:docname="logo.svg"
+   version="1.1"
+   viewBox="0 0 572.47547 590.62366"
+   data-name="Layer 1"
+   id="Layer_1">
+  <metadata
+     id="metadata20">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Logo S</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     inkscape:current-layer="Layer_1"
+     inkscape:window-maximized="0"
+     inkscape:window-y="201"
+     inkscape:window-x="862"
+     inkscape:cy="295.3583"
+     inkscape:cx="286.28607"
+     inkscape:zoom="0.69399204"
+     showgrid="false"
+     id="namedview18"
+     inkscape:window-height="1137"
+     inkscape:window-width="2247"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <defs
+     id="defs9">
+    <style
+       id="style2">.cls-1{fill:url(#New_Gradient_Swatch);}.cls-2{fill:#231f20;}</style>
+    <linearGradient
+       gradientTransform="translate(-642.39892,-260.6417)"
+       gradientUnits="userSpaceOnUse"
+       y2="552.98999"
+       x2="1214.86"
+       y1="552.98999"
+       x1="805.46997"
+       id="New_Gradient_Swatch">
+      <stop
+         id="stop4"
+         stop-color="#fddd4d"
+         offset="0" />
+      <stop
+         id="stop6"
+         stop-color="#f8c332"
+         offset="1" />
+    </linearGradient>
+  </defs>
+  <title
+     id="title11">Logo S</title>
+  <path
+     style="fill:url(#New_Gradient_Swatch)"
+     id="path13"
+     d="m 163.07108,60.938303 a 199.08,199.08 0 0 1 82.53,-49.45 c 28.77,-8.8599998 59.22,-10.79999975 89,-6.6599998 35,4.86 96.75,18.4199998 133.93,57.4499998 54.07,56.779997 52,141.939997 51.37,161.549997 -0.63,19.61 9,56 25.25,78.28 16.25,22.28 30.18,42.08 26.82,55.64 -8.32,33.57 -46.84,19.51 -50.57,41.34 l -13.4,71.4 a 70.53,70.53 0 0 1 -89.79,54.55 l -1.39,-0.43 c -26.56,-8.31 -44.24,13.79 -54.14,34.7 a 39.06,39.06 0 0 1 -45.37,21.33 l -137.65,-36.82 83.46,-263.18 -76.92,-222.999997 z"
+     class="cls-1" />
+  <path
+     id="path15"
+     d="m 263.12108,249.7083 c -0.37,0 -0.74,0 -1.11,0 l -55.15,-164.839997 a 46.79,46.79 0 1 0 -67.31,-14 L 66.551077,151.7983 a 46.65,46.65 0 0 0 -66.45000009,42.36 46.84,46.84 0 0 0 33.00000009,44.7 v 112.5 a 46.75,46.75 0 1 0 33.37,87.1 l 73.130003,81.36 a 46.75,46.75 0 1 0 67.38,-13.9 l 54.91,-162.74 c 0.42,0 0.82,0.06 1.24,0.06 a 46.77,46.77 0 1 0 0,-93.53 z m -202.520003,101.65 v -112.53 a 46.78,46.78 0 0 0 20.69,-13.17 l 135.570003,64.15 a 45.82,45.82 0 0 0 -0.54,6.67 46.69,46.69 0 0 0 0.46,6.18 l -135.130003,62.26 a 46.83,46.83 0 0 0 -21.05,-13.56 z m 175.290003,-92.87 a 46.72,46.72 0 0 0 -7.25,6.44 l -135.530003,-64.13 a 45.82,45.82 0 0 0 0.53,-6.67 46.41,46.41 0 0 0 -6.66,-23.93 L 159.98108,89.268303 a 46.31,46.31 0 0 0 19.68,4.4 c 0.38,0 0.74,0 1.12,-0.05 z m -55,238.6 c -0.41,0 -0.82,-0.06 -1.24,-0.06 a 46.31,46.31 0 0 0 -19.61,4.37 l -73.110003,-81.34 a 45.58,45.58 0 0 0 6.25,-30.18 l 135.160003,-62.26 a 46.82,46.82 0 0 0 7.47,6.73 z"
+     class="cls-2" />
+</svg>

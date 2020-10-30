@@ -1,0 +1,196 @@
+@import '~theme/workpi.scss';
+
+.workpi-table-container {
+  overflow: auto;
+  max-height: 100%;
+}
+
+.workpi-table {
+  position: relative;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: separate;
+  font-size: 0.9em;
+  border-radius: 6px;
+  // background: $color-fg;
+
+  &.dark {
+    box-shadow: 0 2px 16px rgba(0,0,0,0.15);
+    border: 1px solid $color-grey-2;
+    thead {
+      
+      background: linear-gradient(to right, lighten($color-fg, 25%), lighten($color-fg, 15%));
+      color: $color-primary-1;
+
+      th {
+        border-right: 1px solid $color-fg;
+      }
+    }
+
+    tbody {
+      // background: linear-gradient(to right, darken($color-bg, 5%), darken($color-bg, 15%));
+      background: $color-grey-1;
+  
+      tr {
+        &:nth-child(odd) {
+          background: rgba(255,255,255,255.05);
+        }
+        
+      }
+  
+      td {
+        border-right: 1px solid $color-grey-2;
+  
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+  }
+
+  // &.row-has-focus {
+  //   .workpi-table-row {
+  //     filter: blur(2px);
+  //   }
+  // }
+
+  // .workpi-table-widget > .content > & {
+  //   // inside table widget
+  //   border-radius: 0;
+  //   border: none;
+  //   box-shadow: none;
+  //   height: 100%;
+
+  //   th, td {
+  //     &:first-child {
+  //       padding-left: calc(1em + 16px);
+  //     }
+  //     &:last-child {
+  //       padding-right: calc(1em + 16px);
+  //     }
+  //   }
+    
+  //   &> .dark {
+  //     border-bottom: 1px solid $color-grey-2;
+  //   }
+
+  //   // height: 100%;
+  // }
+
+  // border-top: 1px solid $color-primary-1;
+
+  &-header-cell, &-cell {
+    justify-content: center;
+    text-align: center;
+    padding: 0.8em 1em;
+    min-height: 2.4em;
+    vertical-align: middle;
+
+    &:first-child {
+      justify-content: flex-start;
+      text-align: left;
+    }
+  }
+
+  &-header {
+    position: relative;
+    background: $color-bg;
+    color: $color-grey-2;
+    
+
+    .workpi-table-header-cell {
+      position: sticky;
+      top: 0;
+      border-bottom: 1px solid $color-grey-1;
+      font-weight: normal;
+      font-size: 0.8em;
+      height: 2em;
+      background: $color-bg;
+      z-index: $z-level-content + 1;
+
+      // &:last-child {
+      //   border-right: none;
+      // }
+    }
+  }
+
+  &-body {
+    overflow: auto;
+
+    .workpi-table-row {
+      // perspective: 1000px;
+      transform-style: preserve-3d;
+      transition: transform 300ms;
+      
+      
+      .workpi-table-cell {
+        // background: $color-bg;
+        backface-visibility: hidden;
+        // z-index: $z-level-content;
+      }
+
+
+      &:hover {
+        .workpi-table-cell {
+          // z-index: $z-level-content + 2;
+          box-shadow: 0 0 6px 4px adjust-color($color-fg, $alpha: -0.9);
+          
+          // background: $color-bg;
+        }
+      }
+    }
+  }
+}
+
+// .workpi-table-row {
+
+// }
+
+.workpi-table-header-cell, .workpi-table-cell {
+  // transition: all 200ms;
+
+}
+
+.workpi-table-header-cell {
+
+}
+
+.workpi-table-cell {
+  border-bottom: 1px solid lighten($color-grey-1, 4%);
+  clip-path: polygon(0% -100%, 100% -100%, 100% 200%, 0% 200%);
+}
+
+.workpi-row-actions {
+  
+  width: 32px;
+  max-width: 32px;
+  padding: 6px !important;
+  color: $color-grey-2;
+  cursor: pointer;
+
+  &> div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms all;
+    width: 26px;
+    height: 26px;
+    font-size: 14px;
+    // border: 1px solid adjust-color($color-grey-2, $alpha: -1);
+    background: adjust-color($color-grey-2, $alpha: -1);
+    border-radius: 6px;
+    &:hover {
+      // border-color: $color-primary-2;
+      background: $color-primary-2;
+      color: $color-bg;
+      box-shadow: 0 0 6px $color-primary-2;
+    }
+    
+  }
+
+  &.active > div {
+    background: $color-primary-2;
+    color: $color-bg;
+  }
+  
+}

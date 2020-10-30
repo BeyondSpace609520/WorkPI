@@ -1,0 +1,71 @@
+@import '~theme/workpi.scss';
+
+.workpi-dialog-target-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.workpi-dialog-target {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: $z-level-overlay;
+  background: adjust-color($color-fg, $alpha: -0.95);
+  animation-name: ShowDialogBg;
+  animation-duration: 200ms;
+
+  &> div {
+    animation-name: ShowDialog;
+    animation-duration: 200ms;
+
+    .workpi-widget {
+      height: auto;
+      position: relative;
+    }
+  }
+}
+
+@keyframes ShowDialog {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes ShowDialogBg {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes HideDialog {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+    display: none;
+  }
+}
+
+@keyframes HideDialogBg {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

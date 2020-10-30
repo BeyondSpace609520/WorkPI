@@ -1,0 +1,38 @@
+@import '~theme/workpi.scss';
+
+.workpi-action-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  width: 32px;
+  transition: 200ms all;
+  color: $color-fg;
+  // border: 1px solid rgba(0,0,0,0);
+  
+
+  &:hover {
+    // border-color: $color-primary-2;
+    color: $color-primary-2;
+  }
+  
+  border-radius: 16px;
+  cursor: pointer;
+
+  .workpi-widget > .title > .actions & {
+    height: 26px;
+    width: 26px;
+    font-size: 14px;
+    transition: 300ms all;
+    // background: $color-bg;
+    border: 1px solid $color-bg;
+    // color: $color-primary-2;
+    color: $color-bg;
+
+    &:hover {
+      box-shadow: 0 0 12px adjust-color($color-bg, $alpha: -0.5);
+      // background: adjust-color($color-bg, $alpha: -0.5);
+      border-radius: 8px;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@import '~theme/workpi.scss';
+
+
+.progressBar {
+  height: 8px;
+  width: 100%;
+  border: 1px solid $color-primary-1;
+  border-radius: 8px;
+  overflow: hidden;
+
+  :global(.dark) & {
+    border-color: $color-dark-fg;
+
+    &> div {
+      background: $color-dark-fg;
+    }
+  }
+
+  &> div {
+    height: 100%;
+    background: $grad-primary-2;
+  }
+}

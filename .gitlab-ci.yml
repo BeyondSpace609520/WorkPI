@@ -1,0 +1,57 @@
+variables:
+  DOCKER_DRIVER: overlay
+
+cache:
+  paths:
+    - node_modules/
+
+stages:
+#  - test
+  - build
+  - package
+
+# test:
+#   tags:
+#     - docker
+#   image: node
+#   script:
+#     - npm install
+#     - npm run test
+#   variables:
+#     CI: '1'
+
+build:
+  only:
+    - master
+  tags:
+    - docker
+  image: node:14.14.0
+  stage: build
+  variables:
+    CI: 'false'
+  script:
+    - echo 'build web app'
+    - npm install
+    - npm run build
+  artifacts:
+    name: "$CI_COMMIT_REF_NAME"
+    paths:
+      - build/
+
+docker-build:
+  only:
+    - master
+  image: docker:latest
+  services:
+    - docker:dind
+  stage: package
+  tags:
+    - docker
+  dependencies:
+    - build
+  script:
+    - echo 'build docker container for web app'
+    - docker info
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build -t $CI_REGISTRY_IMAGE .
+    - docker push $CI_REGISTRY_IMAGE

@@ -1,0 +1,13 @@
+query Entities {
+    unitFind {
+      id
+    	name
+    	key
+    	description
+    	unitType {
+        name
+      }
+      indicatorCount
+      measurementCount
+    }
+  }

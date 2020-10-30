@@ -1,0 +1,57 @@
+@import '~theme/workpi.scss';
+
+.workpi-context-menu-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: $z-level-overlay;
+
+  .workpi-context-menu {
+    position: absolute;
+    background: adjust-color($color-bg, $alpha: -0.3);
+    backdrop-filter: blur(2px);
+    border-radius: 8px;
+    box-shadow: 0 0 16px $color-shadow;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: transform 200ms;
+    transform: scale(0);
+    border: 1px solid $color-grey-1;
+
+    &.active {
+      transform: scale(1);
+    }
+
+
+    &> div {
+      padding: 0.7em 1.4em;
+      font-size: 0.9em;
+      cursor: pointer;
+      transition: all 300ms;
+      border-top: 1px solid $color-grey-1;
+
+      &:first-child {
+        border: none;
+      }
+
+      svg {
+        color: $color-primary-2;
+      }
+      span {
+        margin-left: 1em;
+      }
+
+      &:hover {
+        background: adjust-color($color-primary-1, $alpha: -0.3);
+        // background: $color-primary-1;
+        // svg {
+        //   color: $color-bg;
+        // }
+      }
+    }
+  }
+}
+

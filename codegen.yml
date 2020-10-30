@@ -1,0 +1,33 @@
+overwrite: true
+schema: "http://199.247.27.93:4000/graphql"
+documents: "src/**/*.graphql"
+hooks:
+  afterAllFileWrite:
+    - prettier --write
+generates:
+  src/gen/schemas.tsx:
+    plugins:
+      - typescript
+  # Create operations based on queries
+  src/gen/operations.tsx:
+    preset: import-types
+    presetConfig:
+      typesPath: ./schemas
+    plugins:
+      - typescript-operations
+  # 1. Export GraphQL documents
+  # 2. React interface
+  # src/gen/hooks.tsx:
+  #   preset: import-types
+  #   presetConfig:
+  #     typesPath: ./operations
+  #   plugins:
+  #     - typescript-react-apollo
+  #   config:
+  #     # Optionals
+  #     withHOC: false
+  #     withComponent: false
+  #     withHooks: true
+  "src/gen/graphql.d.ts":
+    plugins:
+      - "typescript-graphql-files-modules"

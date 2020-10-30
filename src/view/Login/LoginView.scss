@@ -1,0 +1,41 @@
+@import '~theme/workpi.scss';
+
+.workpi-login-dialog {
+  width: 400px;
+
+  p {
+    font-size: 0.9em;
+    margin: .4em;
+  }
+
+
+  // &> .content {
+  //   padding-right: 80px !important;
+  //   padding-left: 80px !important;
+  // }
+
+
+  .linkedin-btn {
+    font-size: 1.3em;
+  }
+
+  // .linkedin-btn {
+  //   background: url(../../assets/linkedin/Retina/Sign-In-Large---Default.png);
+  //   height: 40px * 0.8;
+  //   width: 215px * 0.8;
+  //   background-size: contain;
+  //   transition: 300ms all;
+  //   image-rendering: -webkit-optimize-contrast;
+
+  //   &:hover {
+  //     background: url(../../assets/linkedin/Retina/Sign-In-Large---Hover.png);
+  //     background-size: contain;
+  //   }
+  // }
+
+  // .google-btn {
+  //   height: 40px * 0.8;
+  //   width: 215px * 0.8;
+  //   background: #4285f4;
+  // }
+}

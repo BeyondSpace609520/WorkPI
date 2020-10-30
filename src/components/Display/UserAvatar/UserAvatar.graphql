@@ -1,0 +1,6 @@
+query GetUserAvatarInfo {
+  me {
+    lastName
+    firstName
+  }
+}

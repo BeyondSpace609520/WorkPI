@@ -1,0 +1,80 @@
+@import '~theme/workpi.scss';
+
+.workpi-text-input {
+  margin: 1em 0;
+
+  &.has-error {
+    .label {
+      color: $color-alert;
+    }
+
+    input {
+      border-color: $color-alert;
+      &:focus {
+        box-shadow: none;
+        border-color: $color-alert;
+      }
+    }
+
+    .input-container {
+      background: $color-alert;
+      border-radius: $border-radius;
+      box-sizing: border-box;
+    }
+  }
+
+  .label {
+    font-size: 0.7em;
+    color: $color-grey-2;
+    margin: 0 0.8em .6em;
+  }
+
+  .error {
+    font-size: 0.7em;
+    color: $color-bg;
+    margin: .6em 0.8em;
+    
+  }
+
+  input {
+    border: 1px solid $color-grey-1;
+    width: 100%;
+    height: 100%;
+    padding: 0.8em;
+    box-sizing: border-box;
+    border-radius: $border-radius;
+    background: darken($color-bg, 2%);
+    transition: all 300ms;
+    // outline-color: $color-primary-1;
+    outline: none;
+
+    
+
+    &:focus {
+      border-color: $color-primary-1;
+      // outline-color: $color-primary-1;
+      // outline: none;
+      box-shadow: 0 0 6px adjust-color($color-primary-1, $alpha: -0.5);
+    }
+  }
+
+  .workpi-text-input-group > & {
+    margin: 0;
+    input {
+      border-radius: 0;
+      border: none;
+      border-bottom: 1px solid $color-grey-1;
+      
+    }
+
+    &:last-child input {
+      border-bottom: none;
+    }
+  }
+}
+
+.workpi-text-input-group {
+  border-radius: $border-radius;
+  border: 1px solid $color-grey-1;
+  overflow: hidden;
+}

@@ -1,0 +1,12 @@
+@import '~theme/workpi.scss';
+
+.workpi-user-avatar {
+  .login-btn {
+    transition: 300ms all;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-primary-2;
+    }
+  }
+}

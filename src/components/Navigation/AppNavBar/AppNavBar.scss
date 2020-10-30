@@ -1,0 +1,145 @@
+@import '~theme/workpi.scss';
+
+
+@mixin workpi-menu($height, $mobile: false) {
+  display: flex;
+  z-index: $z-level-content-top + 1;
+  justify-content: space-between;
+  background-color: $color-bg;
+  height: $height;
+  width: 100%;
+  flex-direction: row;
+  flex-shrink: 0;
+  // border-bottom: 1px solid $color-dark-primary-1;
+
+  &.no-sub-nav {
+    border-bottom: 2px solid $color-dark-primary-1;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  }
+  
+
+  .spacer {
+    flex-grow: 1;
+  }
+
+  &> .items {
+    display: flex;
+    flex-direction: row;
+    margin-right: 100px;
+
+    &> .item {
+      box-sizing: content-box;
+      border-top: 2px solid $color-bg;
+      // border-right: 1px solid $color-grey-1;
+      transition: 300ms all;
+
+      // &:first-child {
+      //   border-left: 1px solid $color-grey-1;
+      // }
+
+      &:hover {
+        border-top: 2px solid $color-grey-2;
+        background: rgba(0,0,0,0.06);
+      }
+      
+
+      a {
+        text-decoration: none;
+        color: $color-fg;
+      }
+
+      &.active {
+        border-top: 2px solid $color-dark-primary-1;
+        .name {
+          color: $color-dark-primary-2;
+          // border-bottom-color: $color-dark-primary-1;
+          font-weight: bold;
+
+          // &::before {
+          //   background: $grad-primary-tb-bg;
+          // }
+        }
+      }
+
+      &> div {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .tracer {
+        position: absolute;
+        height: 128px;
+        width: 128px;
+        transform: translate(-64px, -64px);
+        background: radial-gradient(adjust-color($color-bg, $alpha: -0.5) , adjust-color($color-bg, $alpha: -1) 75%);
+      }
+
+      
+
+      .name {
+        position: relative;
+        display: block;
+        height: $height - 2px;
+        line-height: $height - 2px;
+        padding: 0 40px;
+       
+
+        svg {
+          margin-left: 1em;
+        }
+      }
+    }
+  }
+
+  .logo {
+    height: $height * 0.60;
+    width: $height * 0.60;
+    margin: ($height * 0.2) 24px;
+    background: $img-logo;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .dark & {
+      background: $img-dark-logo;
+    }
+  }
+
+  .menu-button {
+    display: flex;
+    align-items: center;
+    height: $height;
+    margin: 0 24px;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    // width: 40px;
+    margin: ($height * 0.2) 24px;
+    // font-size: $height * 0.60;
+  }
+
+  @if $mobile {
+    border-bottom: 1px solid $color-grey-1;
+    &> .items {
+      display: none;
+    }
+  } @else {
+    &> .menu-button {
+      display: none;
+    }
+  }
+} 
+
+.workpi-app-nav-bar {
+
+  @include normal-screen {
+    @include workpi-menu(64px, $mobile: false);
+  }
+
+  @include small-screen {
+    @include workpi-menu(48px, $mobile: true);
+  }
+
+}

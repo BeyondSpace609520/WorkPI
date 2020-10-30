@@ -1,0 +1,14 @@
+@import '~theme/workpi.scss';
+
+.workpi-widget-view {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  flex-grow: 1;
+  align-self: center;
+  margin: 40px 0;
+
+  @include small-screen {
+    margin: 0;
+  }
+}

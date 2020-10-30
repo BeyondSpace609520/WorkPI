@@ -1,0 +1,58 @@
+@import '~theme/workpi.scss';
+
+.workpi-select {
+  position: relative;
+  margin: 1em 0;
+
+  &.active {
+    .workpi-select-field {
+      box-shadow: 0 0 $glow-size adjust-color($color-primary-2, $alpha: -0.5);
+      border: 1px solid $color-primary-1;
+    }
+  }
+
+  .label {
+    font-size: 0.7em;
+    color: $color-grey-2;
+    margin: 0 0.8em .6em;
+  }
+
+  &-field {
+    display: flex;
+    border: 1px solid $color-grey-1;
+    width: 100%;
+    height: 100%;
+    
+    box-sizing: border-box;
+    border-radius: $border-radius;
+    // background: darken($color-bg, 2%);
+    background: linear-gradient(to bottom, darken($color-bg, 2%), $color-grey-1);
+    transition: all 300ms;
+    overflow: hidden;
+
+    &-value {
+      flex-grow: 1;
+      input {
+        width: 100%;
+        padding: 0.8em;
+        box-sizing: border-box;
+        border: none;
+        outline: none;
+        background: rgba(0,0,0,0);
+      }
+    }
+
+    &-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+      width: 36px;
+      background: $color-primary-2;
+      color: $color-bg;
+      // border: 1px solid $color-primary-2;
+    }
+  }
+
+}
+

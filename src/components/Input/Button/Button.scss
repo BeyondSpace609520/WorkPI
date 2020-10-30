@@ -1,0 +1,196 @@
+@import '~theme/workpi.scss';
+
+.workpi-button {
+  // background-color: rgba(255,255,255, 0);
+  display: flex;
+  position: relative;
+  border: 1px solid $color-primary-2;
+  border-radius: 24px;
+  padding: 8px 30px;
+  color: $color-primary-2;
+  font-weight: 500;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: all 300ms;
+  overflow: hidden;
+  width: fit-content;
+
+  & + & {
+    margin-left: 1em;
+  }
+
+  &.disabled {
+    border-color: $color-grey-2;
+    color: $color-grey-2;
+    cursor: default;
+
+    &> .bg {
+      display: none;
+    }
+
+    // &:hover {
+    //   box-shadow: none;
+    // }
+  }
+
+  &> .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $color-primary-1;
+    box-shadow: $glow-primary-1;
+    transform: scale(0);
+    border-radius: 24px;
+    //transition: all 300ms ;
+    animation-duration: 300ms;
+    opacity: .4;
+  }
+
+  &> .label {
+    position: relative;
+  }
+
+  &:hover {
+    // box-shadow: $glow-primary-2;
+
+    &> .bg {
+      animation-name: WorkPiButtonPing;
+    }
+  }
+
+  &.primary {
+    border-color: $color-primary-2;
+    color: $color-bg;
+    background-color: $color-primary-2;
+
+    &> .bg {
+      opacity: 1;
+    }
+
+    &.disabled {
+      border-color: $color-grey-2;
+      color: $color-bg;
+      background-color: $color-grey-2;
+    }
+
+    &:hover {  
+      &> .bg {
+        animation-name: WorkPiButtonPingPrimary;
+      }
+    }
+  }
+
+  &.borderless {
+    border: none;
+    border-radius: 0;
+    color: $color-fg;
+    background-color: rgba(0,0,0,0);
+
+    &.disabled {
+      color: $color-grey-2;
+      &> .label {
+        border-color: $color-grey-2;
+      }
+
+      &:hover {
+        color: $color-grey-2;
+      }
+    }
+
+    &> .bg {
+      display: none;
+    }
+
+    &> .label {
+      border-bottom: 1px solid $color-dark-primary-2;
+    }
+    
+    &:hover {
+      // box-shadow: none;
+      color: $color-primary-2;
+      
+    }
+  }
+
+  &.rectangle {
+    border-radius: 8px;
+    &> .bg {
+      border-radius: 8px;
+    }
+  }
+
+  .dark & {
+    border-color: $color-dark-primary-2;
+    color: $color-dark-primary-2;
+
+    // &> .bg {
+    //   opacity: .5;
+    // }
+
+    &:hover {
+      // box-shadow: 0 0 $glow-size adjust-color($color-dark-primary-1, $alpha: -0.5);
+
+      &> .bg {
+        animation-name: WorkPiButtonPingDark;
+      }
+    
+    }
+
+    &.primary {
+      border-color: $color-dark-primary-2;
+      color: $color-dark-bg;
+      background-color: $color-dark-primary-2;
+      &:hover {    
+        &> .bg {
+          animation-name: WorkPiButtonPingPrimaryDark;
+        }
+      }
+    }
+  }
+}
+
+@keyframes WorkPiButtonPing {
+  from {
+    transform: scale(0);
+    background: $color-primary-1;
+  }
+  to {
+    transform: scale(1);
+    background: rgba(255,255,255,0);
+  }
+}
+
+@keyframes WorkPiButtonPingDark {
+  from {
+    transform: scale(0);
+    background: $color-dark-primary-1;
+  }
+  to {
+    transform: scale(1);
+    background: rgba(0,0,0,0);
+  }
+}
+
+@keyframes WorkPiButtonPingPrimary {
+  from {
+    transform: scale(0);
+    background: $color-primary-1;
+  }
+  to {
+    transform: scale(1);
+    background: $color-primary-2;
+  }
+}
+
+@keyframes WorkPiButtonPingPrimaryDark {
+  from {
+    transform: scale(0);
+    background: $color-dark-primary-1;
+  }
+  to {
+    transform: scale(1);
+    background: $color-dark-primary-2;
+  }
+}

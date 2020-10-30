@@ -1,0 +1,488 @@
+a {
+  color: #f8c332;
+}
+
+body {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  flex-direction: row;
+  background: linear-gradient(to bottom, #fafafa, #ebebeb);
+  overflow: hidden;
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  width: 64px;
+  height: 100%;
+  border-right: 2px solid #fddd4d;
+  flex-shrink: 0;
+  z-index: 100;
+}
+
+nav .logo {
+  background-image: url(logo.svg);
+  height: 48px;
+  width: 48px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 24px 8px;
+}
+
+nav .buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+nav .system {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 88px;
+}
+
+nav .button {
+  display: flex;
+  height: 64px;
+  width: 64px;
+  font-size: 28px;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #eee;
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+nav .button:last-child {
+  border-bottom: 1px solid #eee;
+}
+
+nav .button:hover {
+  background: #eee;
+}
+
+nav .button.active {
+  color: white;
+  background: #fddd4d;
+  border-color: #fddd4d;
+}
+
+nav .button.active:hover {
+  box-shadow: 0 0 12px rgba(253, 221, 77, 0.5);
+}
+
+.drawer {
+  position: relative;
+  width: 0;
+  background: #eee;
+  transition: all 300ms;
+}
+
+.drawer.active {
+  width: 400px;
+  border-right: 1px solid #bbb;
+}
+
+.drawer::before {
+  position: absolute;
+  display: block;
+  top: -20px;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  content: '';
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1) inset;
+}
+
+.drawer .drawer-button {
+  position: absolute;
+  bottom: 40px;
+  right: -8px;
+  width: 16px;
+  height: 32px;
+  background-color: white;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  color: #bbb;
+  line-height: 32px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: grab;
+  user-select: none;
+  z-index: 1000;
+}
+
+.drawer > .content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 400px;
+}
+
+.drawer > .content .widget {
+  margin: 40px;
+}
+
+main {
+  display: flex;
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.tab-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  max-height: 100vh;
+  flex-grow: 1;
+}
+
+.tab-container > .tabs {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  height: 32px;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: -16px;
+  z-index: 100;
+  border: 1px solid #fff;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.tab-container > .tabs > div {
+  height: 48px;
+  width: 100px;
+  align-self: center;
+  line-height: 48px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 300ms;
+  border-right: 1px solid #eee;
+  font-size: 0.8em;
+  box-sizing: border-box;
+}
+
+.tab-container > .tabs > div:last-child {
+  border-right: none;
+}
+
+.tab-container > .tabs > div.active {
+  background: #fddd4d;
+  color: white;
+  font-weight: bold;
+}
+
+.tab-container > .tabs > div.active:hover {
+  background: white;
+  color: #fddd4d;
+}
+
+.tab-container > .tabs > div:hover {
+  color: #fddd4d;
+}
+
+.tab-container > .content {
+  display: flex;
+  width: 100%;
+  flex-grow: 1;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  z-index: 90;
+}
+
+#content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  overflow: auto;
+  gap: 40px;
+  padding-bottom: 20px;
+}
+
+#wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-weight: normal;
+  font-size: 1.4em;
+  margin: 1.6em 0;
+}
+
+.widget {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: white;
+  min-width: 300px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.widget.secondary {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.widget.secondary .title {
+  background: rgba(255, 255, 255, 0);
+}
+
+.widget.secondary .title span {
+  color: #f8c332;
+}
+
+.widget.focus {
+  background: linear-gradient(to right, #f8c332, #fddd4d);
+}
+
+.widget.curved {
+  background: linear-gradient(to right, #f8c332, #fddd4d);
+}
+
+.widget.curved .content-bg {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 16px;
+  flex-grow: 1;
+}
+
+.widget.wide {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.widget .title {
+  height: 48px;
+  width: 100%;
+  background: linear-gradient(to right, #f8c332, #fddd4d);
+  padding: 16px 10px;
+  box-sizing: border-box;
+  font-weight: lighter;
+}
+
+.widget .title span {
+  padding: 0 6px;
+}
+
+.widget .content {
+  width: 100%;
+  flex-grow: 1;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.widget .bottom {
+  width: 100%;
+  background: black;
+  padding: 10px 16px;
+  box-sizing: border-box;
+  font-size: 0.8em;
+  text-align: right;
+}
+
+button {
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #fddd4d;
+  border-radius: 24px;
+  padding: 8px 30px;
+  color: #fddd4d;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+button:hover {
+  box-shadow: 0 0 12px rgba(253, 221, 77, 0.5);
+}
+
+button.primary {
+  border-color: #fddd4d;
+  color: white;
+  background-color: #fddd4d;
+}
+
+button.squared {
+  border-radius: 8px;
+}
+
+.scroll-container {
+  flex-grow: 1;
+  width: 100%;
+  position: relative;
+}
+
+.scroll-container > .scroller {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 8px;
+}
+
+.scroll-container > .content {
+  position: absolute;
+  top: 0;
+  right: 8px;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  padding: 40px;
+}
+
+.side-widgets {
+  display: none;
+}
+
+.focus button {
+  border-color: white;
+  color: white;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.focus button:hover {
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+}
+
+.focus button.primary {
+  border-color: white;
+  color: #f8c332;
+  background-color: white;
+}
+
+.focus .progress-bar {
+  border: 1px solid white;
+}
+
+.focus .progress-bar > div {
+  background: white;
+}
+
+.progress-bar {
+  height: 8px;
+  width: 100%;
+  border: 1px solid #fddd4d;
+  border-radius: 8px;
+}
+
+.progress-bar > div {
+  height: 100%;
+  width: 33%;
+  background: linear-gradient(to right, #f8c332, #fddd4d);
+}
+
+body.dark-theme {
+  background: linear-gradient(to bottom, #323232, #232323);
+  color: white;
+}
+
+body.dark-theme nav {
+  background: linear-gradient(to right, #f8c332, #fddd4d);
+  border-color: white;
+}
+
+body.dark-theme nav .logo {
+  background-image: url(logo-white.svg);
+}
+
+body.dark-theme nav .button {
+  border-color: #f8c332;
+}
+
+body.dark-theme nav .button.active {
+  background: white;
+  color: black;
+}
+
+body.dark-theme nav .button.active:hover {
+  background: white;
+}
+
+body.dark-theme nav .button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+body.dark-theme .widget {
+  background: #333;
+}
+
+body.dark-theme .widget .title {
+  color: black;
+}
+
+body.dark-theme .widget.curved {
+  background: linear-gradient(to right, #f8c332, #fddd4d);
+}
+
+body.dark-theme .widget.curved .content-bg {
+  background: #333;
+}
+
+body.dark-theme .widget.focus {
+  background: linear-gradient(to right, #f8c332, #fddd4d);
+}
+
+body.dark-theme button.primary {
+  color: black;
+}
+
+body.dark-theme .tab-container > .tabs {
+  background: #333;
+  border-color: #666;
+}
+
+body.dark-theme .tab-container > .tabs > div {
+  border-color: #666;
+}
+
+body.dark-theme .tab-container > .tabs > div.active {
+  background: #fddd4d;
+  color: white;
+}
+
+body.dark-theme .tab-container > .tabs > div.active:hover {
+  background: #666;
+  color: #fddd4d;
+}
+
+body.dark-theme .tab-container > .tabs > div:hover {
+  background: #666;
+  color: #fddd4d;
+}
+
+body.dark-theme .tab-container > .content {
+  border-color: #666;
+}
+
+body.dark-theme .drawer {
+  background: #444;
+}
+
+body.dark-theme .drawer.active {
+  border-right: 1px solid #000;
+}
+
+body.dark-theme .drawer::before {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3) inset;
+}
+
+body.dark-theme .drawer .drawer-button {
+  background-color: white;
+  border-color: white;
+  color: #000;
+}

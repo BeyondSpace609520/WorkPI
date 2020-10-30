@@ -1,0 +1,44 @@
+@import './theme/workpi.scss';
+
+.App {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  margin: 0;
+  background: $grad-bg;
+  color: $color-fg;
+  overflow: hidden;
+  flex-direction: column;
+
+  .dark & {
+    background: $grad-dark-bg;
+    color: $color-dark-fg;
+  }
+}
+
+a {
+  color: $color-fg;
+  transition: 200ms color;
+  text-decoration: none;
+
+  border-bottom: 1px solid $color-primary-2;
+  padding-bottom: 2px;
+
+  &.no-underline {
+    padding: 0;
+    border: none;
+  }
+
+  &:hover {
+    color: $color-primary-2;
+  }
+}
+
+hr {
+  border: none;
+  border-top: 1px solid $color-fg;
+}

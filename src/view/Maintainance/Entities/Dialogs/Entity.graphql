@@ -1,0 +1,25 @@
+query EntityTypes {
+	unitTypeFind {
+    name
+  }
+}
+
+query EntityEditGet($id: Float!) {
+	unitFind(id: $id) {
+    name
+    description
+    unitType {
+      name
+    }
+  }
+}
+
+mutation EditEntity($id: Float!, $data: UnitInput!) {
+	unitUpdate(id: $id, data: $data) {
+    name
+    description
+    unitType {
+      name
+    }
+  }
+}

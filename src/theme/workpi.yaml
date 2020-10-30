@@ -1,0 +1,13 @@
+# screen sizes
+
+small-screen-threshold: 600
+
+
+# colors
+
+primary1: "#ffc815"
+primary1-bg: "#666"
+
+# dimensions
+
+border-radius: "6px"

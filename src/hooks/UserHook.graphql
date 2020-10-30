@@ -1,0 +1,11 @@
+query GetUser {
+  me {
+    id
+    firstName
+    middleName
+    lastName
+    email
+    phoneNumber
+    active
+  }
+}

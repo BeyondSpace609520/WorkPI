@@ -1,0 +1,6 @@
+schema: http://199.247.27.93:4000/graphql
+documents: "src/**/*.graphql"
+extensions:
+  codegen:
+    - generator: graphql-binding
+      language: typescript
